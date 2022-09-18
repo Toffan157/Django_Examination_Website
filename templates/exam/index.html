@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+<head>
+  <title>Online Examination System</title>
+</head>
+<body style= "background-color: #07eb71;">
+  {% include "exam/navbar.html" %}
+  <br><br><br>
+ <h1 style="background-color :orange" class="text-center pb-2 mt-1">Online Examination System</h1>
+<br>
+<div class="container-fluid">
+<div class="row">
+ <div class="col-md-4">
+ <img src="{%static 'image/exam2.jpg'%}" style="height:330px;width:460px" >
+ </div>
+ <div class="col-md-4">
+ <img src="{%static 'image/fmu2.jpg'%}" style="height:330px;width:460px">
+ </div>
+ <div class="col-md-4">
+   <img src="{%static 'image/cs.jpg'%}" style="height:330px;width:460px">
+ </div>
+</div>
+</div><br>
+<div class="footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="box-container">
+      <div class="box text-center font-weight-bold bg-info pb-2">
+          <h3 class="bg-warning pb-1">Online Source</h3>
+          <a class="nav-link text-dark" href="https://www.javatpoint.com/">Javatpoint</a>
+          <a class="nav-link text-dark" href="https://www.w3schools.com/">W3Schools</a>
+          <a class="nav-link text-dark" href="https://www.geeksforgeeks.org/">GeeksForGeeks</a>
+      </div>
+    </div>
+  </div>
+      <div class="col-md-4">
+          <div class="box text-center font-weight-bold bg-info pb-2">
+              <h3 class="bg-warning pb-1">Quick Links</h3>
+                <br>
+                   <a class="nav-link text-dark" href="http://www.fmuniversity.nic.in/">FM University</a>
+                   <a class="nav-link text-dark pb-4 " href="https://swayam.gov.in/">swayam</a>
+           </div>
+        </div>
+      <div class="col-md-4">
+        <div class="box text-center font-weight-bold bg-info pb-2">
+            <h3 class="bg-warning pb-1">Contact Info</h3>
+               <p> <i class="fa fa-map-marker text-danger"></i>FM University PG Dept. of Computer Science</p>
+               <p> <i class="fa fa-envelope text-danger" ></i>hodictfmu@gmail.com</p>
+               <p> <i class="fa fa-phone text-danger"></i>9337616474</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </body>
+</html>

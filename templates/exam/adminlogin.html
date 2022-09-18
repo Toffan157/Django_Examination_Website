@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Online Examination System</title>
+    <style media="screen">
+      body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.box {
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #212529;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.25s;
+    margin-top: 100px
+}
+.box input[type="text"],
+.box input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    outline: none;
+    color: white;
+}
+
+
+.box h1 {
+    color: white;
+    font-weight: 500
+}
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+    width: 300px;
+    border-color: #4caf50;
+}
+
+.box input[type="submit"] {
+    border: 0;
+    background: #4caf50;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 5px;
+    transition: 0.25s;
+    cursor: pointer
+}
+
+.box input[type="submit"]:hover {
+    background: #347736;
+}
+    </style>
+  </head>
+  <body>
+    <br><br>
+    {% include "exam/navbar.html" %}
+    <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <form class="box" method="post">
+                    {% csrf_token %}
+                    <h1>Admin Login Panel</h1>
+                    <label>Username</label>
+                     <input type="text" name="uname" class="form-control" placeholder="Enter Username" required>
+                     <label>Password</label>
+                     <input type="password" name="password" class="form-control" placeholder="Enter Password" required>
+                     <input type="submit" value="Admin Login">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% if error == 'no' %}
+<script>
+   alert('Logged in Successfully');
+   window.location=('{% url 'admin-dashboard' %}');
+</script>
+{% endif %}
+
+{% if error == 'yes' %}
+<script>
+   alert('Invalid Logged In, Please try again');
+</script>
+{% endif %}
+</body>
+</html>

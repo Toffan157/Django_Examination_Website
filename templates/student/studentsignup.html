@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <title>Online Examination System</title>
+    <meta charset="utf-8">
+    <style>
+    input[name]{
+    margin-top: -5px;
+         }
+        form{
+           margin: 50px;
+        }
+    </style>
+  </head>
+  <body style="background-color: #04c796;">
+    {% include "exam/navbar.html" %}
+<br><br><br>
+<div class="container-fluid">
+  <h3 style="text-align: center; background-color :orange" class="pb-1">Student Signup Form</h3>
+    <div class="row">
+        <div class="col-md-6">
+<img src="{% static 'image/stud.jpg' %}" style="height:90%;width:700px;" class="mt-4">
+        </div>
+        <div class="col-md-6">
+          <form method="POST" autocomplete="off" enctype="multipart/form-data">
+              {% csrf_token %}
+          <label for="first_name">First Name</label>
+          {% render_field userForm.first_name|attr:'required:true'  class="form-control" placeholder="First Name" %}
+
+          <label for="last_name">Last Name</label>
+          {% render_field userForm.last_name|attr:'required:true'  class="form-control" placeholder="Last Name" %}
+
+          <label for="mobile">Contact</label>
+          {% render_field studentForm.mobile|attr:'required:true'  class="form-control" placeholder="Contact Number" %}
+
+          <label for="address">Address</label>
+          {% render_field studentForm.address|attr:'required:true'  class="form-control" placeholder="Address" %}
+
+          <label for="username">Username</label>
+          {% render_field userForm.username|attr:'required:true'  class="form-control" placeholder="username" %}
+
+          <label for="inputPassword4">Password</label>
+          {% render_field userForm.password|attr:'required:true'  class="form-control" placeholder="password" %}
+
+          <label for="profile_pic">Profile Picture</label>
+          {% render_field studentForm.profile_pic|attr:'required:true' class="form-control" placeholder="" %}
+
+    <button type="submit" class="btn btn-success mt-2" style="border-radius: 0%;">Sign Up</button>
+  </form>
+</div>
+</div>
+</div>
+  </body>
+</html>
