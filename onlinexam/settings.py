@@ -82,10 +82,8 @@ WSGI_APPLICATION = 'onlinexam.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'oxmdb',
-        'USER': 'root',
-        'PASSWORD': 'nth@9010'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'sqlite3.db',
     }
 }
 
